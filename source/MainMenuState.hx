@@ -39,10 +39,13 @@ class MainMenuState extends MusicBeatState
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
+	var inCutscene:Bool = false;
+	
 	public static var firstStart:Bool = true;
 
 	public static var nightly:String = "";
-
+        public static var storyPlaylist:Array<String> = [];
+	
 	public static var kadeEngineVer:String = "1.5.4" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
