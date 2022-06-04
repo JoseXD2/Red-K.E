@@ -292,8 +292,9 @@ class MainMenuState extends MusicBeatState
 						{
 							new FlxTimer().start(0.7, function(tmr:FlxTimer)
 							{
-								playCutscene(SUtil.getPath() + "assets/videos/CUTSCENE.mp4", true);
+								
 								{
+									playCutscene(SUtil.getPath() + "assets/videos/CUTSCENE.mp4", true);
 									LoadingState.loadAndSwitchState(new PlayState(), true);
 								}
 							});
