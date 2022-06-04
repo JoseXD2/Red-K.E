@@ -294,7 +294,7 @@ class MainMenuState extends MusicBeatState
 							{
 								
 								{
-									playCutscene(SUtil.getPath() + "assets/videos/CUTSCENE.mp4", true);
+									playCutscene(SUtil.getPath() + "assets/videos/CUTSCENE.mp4");
 									LoadingState.loadAndSwitchState(new PlayState(), true);
 								}
 							});
