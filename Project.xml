@@ -134,6 +134,7 @@
 	<haxelib name="linc_luajit" if="windows"/>
         <haxelib name="extension-videoview" if="android"/>
         <haxelib name="extension-androidtools" if="android"/>
+	<haxelib name="hxCodec"/>
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 	<!-- <haxelib name="markdown" /> -->
