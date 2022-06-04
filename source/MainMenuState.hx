@@ -238,7 +238,29 @@ class MainMenuState extends MusicBeatState
 			//spr.screenCenter(X);
 		});
 	}
-	
+	function playCutscene(name:String, ?atend:Bool)
+        {
+	inCutscene = true;
+
+	var video:VideoHandler = new VideoHandler();
+	FlxG.sound.music.stop();
+	video.finishCallback = function()
+	{
+		if (atend == true)
+		{
+			if (storyPlaylist.length <= 0)
+				FlxG.switchState(new StoryMenuState());
+			else
+			{
+				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+				FlxG.switchState(new PlayState());
+			}
+		}
+		else
+			startCountdown();
+	}
+	video.playVideo(Paths.video(CUTSCENE));
+        }
 	function goToState()
 	{
 		var daChoice:String = optionShit[curSelected];
