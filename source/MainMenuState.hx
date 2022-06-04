@@ -46,7 +46,7 @@ class MainMenuState extends MusicBeatState
 	public static var nightly:String = "";
         public static var storyPlaylist:Array<String> = [];
 	
-	public static var SONG:
+	
 	
 	public static var kadeEngineVer:String = "1.5.4" + nightly;
 	public static var gameVer:String = "0.2.7.1";
@@ -244,29 +244,15 @@ class MainMenuState extends MusicBeatState
 			//spr.screenCenter(X);
 		});
 	}
-	function playCutscene(name:String, ?atend:Bool)
-        {
-	inCutscene = true;
-
-	var video:VideoHandler = new VideoHandler();
-	FlxG.sound.music.stop();
-	video.finishCallback = function()
-	{
-		if (atend == true)
-		{
-			if (storyPlaylist.length <= 0)
-				FlxG.switchState(new StoryMenuState());
-			else
-			{
-				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-				FlxG.switchState(new PlayState());
-			}
-		}
-		else
-			startCountdown();
-	}
-	video.playVideo(Paths.video(name));
-        }
+	function playCutscene(path:String) { 
+        inCutscene = true;
+        var video:VideoHandler = new VideoHandler();
+        FlxG.sound.music.stop();
+        video.finishCallback = function() {
+            FlxG.switchState(new PlayState());
+        } 
+        video.playVideo(path);
+    }
 	function goToState()
 	{
 		var daChoice:String = optionShit[curSelected];
